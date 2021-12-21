@@ -11,18 +11,15 @@ import org.springframework.context.annotation.Configuration;
 public class SaludoAutoConfigure {
 
     private final SaludoProperties properties;
-    
-    public SaludoAutoConfigure (SaludoProperties sp)
-    {
-        this.properties=sp;
+
+    public SaludoAutoConfigure(SaludoProperties sp) {
+        this.properties = sp;
     }
-    
+
     @Bean
-    public Saludo saludo()
-    {
-        System.out.println("Idioma"+properties.getIdioma());
+    public Saludo saludo() {
+        System.out.println("Idioma" + properties.getIdioma());
         return new Saludo(properties.getIdioma());
     }
-    
-    
+
 }
